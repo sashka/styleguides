@@ -10,213 +10,226 @@
 3. В пределах одного файла используется только один размер отступа. Если автор файла использовал отступ в 4 пробела, то при редактировании нужно использовать такой же отступ.
 
 4. Код внутри пространства имён (namespace), классов и т.п. нужно выделять отступами.
-    Правильно:
-  
-    namespace mediaplanner {
+
+   _Правильно:_
+    
+        namespace mediaplanner {
+     
+            class Config {
+                Config();
+                ...
+            }; 
+        
+        } // namespace mediaplanner
+
+
+   _Неправильно:_
+      
+        namespace mediaplanner {
      
         class Config {
             Config();
             ...
         }; 
     
-    } // namespace mediaplanner
+        } // namespace mediaplanner
 
+5. Ключевые слова _public_, _protected_, _private_ в классах должны находиться на одном уровне с объявлением класса. Порядок следования: _public_, _protected_ и _private_.
 
-    Неправильно:
-      
-    namespace mediaplanner {
-     
-    class Config {
-        Config();
-        ...
-    }; 
-   
-    } // namespace mediaplanner
+    _Правильно:_
+        class Accessor {
+        public:
+          ...
+  
+        protected:
+          ...
+  
+        private:
+          ...
+        };
 
-5. Ключевые слова public, protected, private в классах должны находиться на одном уровне с объявлением класса. Порядок следования: public, protected и private.
-    Правильно:
-  
-    class Accessor {
-    public:
-      ...
-  
-    protected:
-      ...
-  
-    private:
-      ...
-    };
-
-    Неправильно:
-  
-    class Accessor {
-      protected:
-        ...
     
-      public:
-        ...
+    _Неправильно:_
+  
+        class Accessor {
+          protected:
+            ...
     
-      private:
-        ...
-    };
+          public:
+            ...
+    
+          private:
+            ...
+        };
 
 Пробелы
 -------
 1. Не нужно использовать пробел с унарными операторами.
-    Правильно:
-    ++i;
-    i++;
 
-    Неправильно:
-    i ++;
-    ++ i;
+    _Правильно:_
+        ++i;
+        i++;
+
+    _Неправильно:_
+        i ++;
+        ++ i;
 
 2. Нужно ставить пробелы вокруг бинарных, тернарных операторов и после запятой.
-    Правильно:
-    y = m * x + b;
-    c =  a | b;
-    f(x, y);
-    return condition ? 1 : 0;
 
-    Неправильно:
-    y = m*x+b;
-    c =  a|b;
-    f(x,y);
-    return condition ? 1:0;
+    _Правильно:_
+        y = m * x + b;
+        c =  a | b;
+        f(x, y);
+        return condition ? 1 : 0;
+
+    _Неправильно:_
+        y = m*x+b;
+        c =  a|b;
+        f(x,y);
+        return condition ? 1:0;
 
 3. Между ключевым словом и открывающей скобкой нужно ставить пробел.
-    Правильно:
-    if (condition) {
-        Action();
-    }
 
-    Неправильно:
-    if(condition) {
-        Action();
-    }
+    _Правильно:_
+        if (condition) {
+            Action();
+        }
+
+    _Неправильно:_
+        if(condition) {
+            Action();
+        }
 
 4. Не нужно ставить пробел между именем функции и открывающей скобкой. Тем более, не нужен пробел после открывающей скобки и перед закрывающей.
-    Правильно:
-    f(a, b);
 
-    Неправильно:
-    f (a, b);
-    f( a, b );
+    _Правильно:_
+        f(a, b);
+
+    _Неправильно:_
+        f (a, b);
+        f( a, b );
 
 5. Если тип является указателем или ссылкой, то между именем базового типа и знаком "*" или "&" пробел не ставится.
-    Правильно:
-    Document* LoadDocument(const FilePath& path);
 
-    Неправильно:
-    Document *LoadDocument(const FilePath &path);
-    Document * LoadDocument(const FilePath & path);
+    _Правильно:_
+        Document* LoadDocument(const FilePath& path);
+
+    _Неправильно:_
+        Document *LoadDocument(const FilePath &path);
+        Document * LoadDocument(const FilePath & path);
 
 
 Перенос строк
 -------------
 1. Каждое выражение должно быть записано на отдельной строке.
-    Правильно:
-    ++x;
-    y++;
-    if (condition) {
-        Action();
-    }
 
-    Неправильно:
-    ++x; y++;
-    if (condition) { Action(); }
+    _Правильно_:
+        ++x;
+        y++;
+        if (condition) {
+            Action();
+        }
+
+    _Неправильно:_
+        ++x; y++;
+        if (condition) { Action(); }
 
 
 Фигурные скобки
 ---------------
 1. Открывающая фигурная скобка всегда ставится в конце строки, перед блоком кода. Закрывающая скобка ставится на новой строке.
-    Правильно:
-    class Storage {
-        Storage(string filename);
-        ...
-    };
-  
-    namespace threads {
-        ...
-    };  
-   
-    for (int i = 0; i < 10; ++i) {
-        Action();
-    }
 
-    Неправильно:
-    class Storage 
-    {
-        Storage(string filename);
-        ...
-    };
+    _Правильно:_
+        class Storage {
+            Storage(string& filename);
+            ...
+        };
   
-    for (int i = 0; i < 10; ++i) 
-    {
-        Action();
-    }
+        namespace threads {
+            ...
+        };  
+   
+        for (int i = 0; i < 10; ++i) {
+            Action();
+        }
+
+    _Неправильно:_
+        class Storage 
+        {
+            Storage(string& filename);
+            ...
+        };
+  
+        for (int i = 0; i < 10; ++i) 
+        {
+            Action();
+        }
 
 
 2. Фигурные скобки ставятся всегда, даже если внутри них нет кода.
-    Правильно:
-    for (int i = container->begin(); i != container->end(); ++i) {
-    }
 
-    Неправильно:
-    for (int i = container->begin(); i != container->end(); ++i);
+    _Правильно:_
+        for (int i = container->begin(); i != container->end(); ++i) {
+        }
+
+    _Неправильно:_
+        for (int i = container->begin(); i != container->end(); ++i);
 
 
 Использование NULL, false и 0
 -----------------------------
 1. В C++ нулевой указатель нужно записывать как 0, в C — как NULL. 
 
-2. В C++ и C значения типа bool нужно записывать как true и false. Поддержка типа bool для C включена в base/basictypes.h.
+2. В C++ и C значения типа bool нужно записывать как _true_ и _false_. Поддержка типа bool для C включена в _base/basictypes.h_.
 
 3. Проверка указателей на равенство нулевому должны быть записаны в явном виде.
-    Правильно:
-    Vector* ptr = new Vector();
-    if (ptr == 0) {
-        Abort("Everything goes bad");
-        ...
-    };
 
-    Неправильно:
-    if (!ptr) {
-        ...
-    };
+    _Правильно:_
+        Vector* ptr = new Vector();
+        if (ptr == 0) {
+            Abort("Everything goes bad");
+            ...
+        };
+
+    _Неправильно:_
+        if (!ptr) {
+            ...
+        };
 
 4. Проверка логического значения записывается без сравнения.
-    Правильно:
-    bool condition = true;
-    if (condition) {
-        ...
-    };
 
-    Неправильно:
-    if (condition == true) {
-        ...
-    };
+    _Правильно:_
+        bool condition = true;
+        if (condition) {
+            ...
+        };
+
+    _Неправильно:_
+        if (condition == true) {
+            ...
+        };
 
 5. Проверка равенства чисел нулю должна быть записано явно.
-    Правильно:
-    int n;
-    if (n == 0) {
-        ...
-    };
+
+    _Правильно:_
+        int n;
+        if (n == 0) {
+            ...
+        };
   
-    if (n != 0) {
-        ...
-    };
+        if (n != 0) {
+            ...
+        };
 
 
-    Неправильно:
-    if (n) {
-        ...
-    };
+    _Неправильно:_
+        if (n) {
+            ...
+        };
   
-    if (!n) {
-        ...
-    };
+        if (!n) {
+            ...
+        };
 
 Макросы
 -------
@@ -226,63 +239,64 @@
 
 3. Лучше использовать inline-функцию вместо макроса.
 
-4. Имя макроса должно быть записано _заглавными_ буквами, чтобы визуально отличаться от методов и переменных. Если имя макроса сотоит из нескольких слов, они должны быть разделены символами подчёркивания "_".
-    Правильно:
-    #define DEFINE_PROPERTY(key, val) wxConvCurrent->cWX2MB(key, val)
+4. Имя макроса должно быть записано _заглавными_ буквами, чтобы визуально отличаться от методов и переменных. Если имя макроса состоит из нескольких слов, они должны быть разделены символами подчёркивания "_".
+
+    _Правильно:_
+        #define DEFINE_PROPERTY(key, val) wxConvCurrent->cWX2MB(key, val)
       
-    Неправильно:
-    #define define_property(key, val) wxConvCurrent->cWX2MB(key, val)
-    #define DefineProperty(key, val) wxConvCurrent->cWX2MB(key, val);
+    _Неправильно:_
+        #define define_property(key, val) wxConvCurrent->cWX2MB(key, val)
+        #define DefineProperty(key, val) wxConvCurrent->cWX2MB(key, val);
 
 Перечисления
 ------------
 1. Значения перечислений нужно писать заглавными буквами.
 
 2. Значения должны иметь приставку с названием перечисления.
-    Правильно:
-    enum RCodes {
-      RCODE_UNKNOWN,
-      RCODE_SUCCESS
-    };
+
+    _Правильно:_
+        enum RCodes {
+          RCODE_UNKNOWN,
+          RCODE_SUCCESS
+        };
   
 
-    Неправильно:  
-    enum RCodes {
-      Unknown,
-      Success
-    };
+    _Неправильно:_
+        enum RCodes {
+          Unknown,
+          Success
+        };
 
 Параметры методов по-умолчанию
 ------------------------------
 1. Параметры по-умолчанию задаются только в заголовочном файле, в объявлении методов.
-    Правильно:
-    class A {
-    public:
-      void Hello(const std::string& message = "Hi!");
-    };
 
+    _Правильно:_
+        class A {
+        public:
+          void Hello(const std::string& message = "Hi!");
+        };
 
-    Неправильно:
-    void A::Hello(const std::string& message = "Hi!") {
-      ...
-    }
+    _Неправильно:_
+        void A::Hello(const std::string& message = "Hi!") {
+          ...
+        }
 
 2. Параметры по-умолчанию нельзя задавать у виртуальных методов, иначе есть риск наткнуться на то, что они наследуются из родительского класса.
 
-      Пример:
+    _Пример:_
+        class A {
+        public:
+            virtual void bla(int x = 1);
+        };
   
-      class A {
-      public:
-        virtual void bla(int x = 1);
-      };
+        class B : public A {
+        public:
+            void bla(int x = 2);
+        };
   
-      class B : public A {
-      public:
-        void bla(int x = 2);
-      };
-  
-      A a = B();
-      a.bla(); // принимает x = 1
+        A a = B();
+        a.bla(); // принимает x = 1
 
 
 
