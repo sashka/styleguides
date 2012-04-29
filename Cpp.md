@@ -54,11 +54,7 @@
 6. Ключевые слова `public`, `protected`, `private` в классах должны находиться на одном уровне с объявлением класса. Порядок следования: `public`, `protected` и `private`.
 
     _Правильно:_
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 7fe97616c7c14e0be35bfedd879daad5a66774db
         class Accessor {
         public:
           ...
