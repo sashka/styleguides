@@ -13,26 +13,26 @@ Code formatting
 
    _Correct:_
 
-	   namespace mediaplanner {
+        namespace mediaplanner {
 
-	   class Config {
-	       Config();
-	       ...
-	   };
-
-	   } // namespace mediaplanner
+        class Config {
+            Config();
+            ...
+        };
+       
+        } // namespace mediaplanner
 
 
    _Incorrect:_
 
-	   namespace mediaplanner {
-
-	       class Config {
-	           Config();
-	           ...
-	       };
-
-	   } // namespace mediaplanner
+        namespace mediaplanner {
+        
+           class Config {
+                Config();
+                ...
+           };
+        
+        } // namespace mediaplanner
 
 5. Code inside `class`, `enum`, `struct` etc. should be indented.
 
@@ -58,10 +58,10 @@ Code formatting
         class Accessor {
         public:
           ...
-
+        
         protected:
           ...
-
+        
         private:
           ...
         };
@@ -72,10 +72,10 @@ Code formatting
         class Accessor {
           protected:
             ...
-
+          
           public:
             ...
-
+        
           private:
             ...
         };
@@ -185,11 +185,11 @@ Curly brackets
             Storage(string& filename);
             ...
         };
-
+        
         namespace threads {
             ...
         };
-
+        
         for (int i = 0; i < 10; ++i) {
             Action();
         }
@@ -202,7 +202,7 @@ Curly brackets
             Storage(string& filename);
             ...
         };
-
+        
         for (int i = 0; i < 10; ++i)
         {
             Action();
