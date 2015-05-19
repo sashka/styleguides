@@ -13,26 +13,26 @@
 
    _Правильно:_
 
-	   namespace mediaplanner {
-
-	   class Config {
-	       Config();
-	       ...
-	   }; 
-
-	   } // namespace mediaplanner
+        namespace mediaplanner {
+           
+            class Config {
+               Config();
+               ...
+            }; 
+            
+        } // namespace mediaplanner
 
 
    _Неправильно:_
 
-	   namespace mediaplanner {
-
-	       class Config {
-	           Config();
-	           ...
-	       }; 
-   
-	   } // namespace mediaplanner
+        namespace mediaplanner {
+         
+            class Config {
+                Config();
+                ...
+            }; 
+          
+        } // namespace mediaplanner
 
 5. Код внутри `class`, `enum`, `struct` и т.п. нужно выделять отступами.
 
